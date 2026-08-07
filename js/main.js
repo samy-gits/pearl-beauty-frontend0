@@ -145,9 +145,9 @@ document.addEventListener('click', (e) => {
 // ---------------------------------------------------------------------------
 function initInitialLoader() {
   const loader = document.getElementById('initial-loader');
-  setTimeout(() => {
-    if (loader) loader.remove();
-  }, 700);
+  if (loader) {
+    loader.style.display = 'none';
+  }
 }
 
 // ---------------------------------------------------------------------------
