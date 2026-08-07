@@ -1,3 +1,8 @@
+
+alert("main.js loaded");
+
+// rest of your code...
+
 const SUPABASE_URL = "https://eztzkivwjkcyxwcopxns.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_CVHtnwHwG2TF4AXBam0_Sw_Jt2NhU_r";
 
