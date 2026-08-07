@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pearl Beauty Hub | Premium Beauty Parlour in Korattur, Chennai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="bg-[#FAF7F2] text-[#2C2623] antialiased selection:bg-[#E8D5C4] selection:text-[#2C2623]">
+    <div class="min-h-screen bg-[#FAF7F2] text-[#2C2623] relative selection:bg-[#E8D5C4]">
+
+      <!-- Top Progress Bar -->
+      <div class="fixed top-0 left-0 right-0 h-1 z-50 pointer-events-none bg-transparent">
+        <div id="scroll-progress-bar" class="h-full bg-gradient-to-r from-[#D4AF37] via-[#E8D0B8] to-[#9E7B5D] transition-all duration-150 ease-out" style="width: 0%"></div>
+      </div>
+
+      <!-- Initial Subtle Loader -->
+      <div id="initial-loader" class="fixed inset-0 z-50 bg-[#FAF7F2] flex flex-col items-center justify-center p-4 transition-opacity duration-500">
+        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#F5E6D3] to-[#E3C9AF] flex items-center justify-center text-[#8C6D53] shadow-md border border-[#D4AF37]/30 mb-4 animate-bounce">
+          <i data-lucide="sparkles" class="w-8 h-8 text-[#9E7B5D]"></i>
+        </div>
+        <h1 class="font-serif-display text-2xl font-bold text-[#2C2623] tracking-tight">Pearl Beauty Hub</h1>
+        <p class="text-xs uppercase tracking-widest text-[#8C7A6B] mt-1">Beauty Parlour</p>
+      </div>
+
+      <!-- Sticky Header Navbar -->
+      <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-b from-[#FAF7F2]/90 via-[#FAF7F2]/60 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <button data-nav-link="hero" class="flex items-center gap-2.5 text-left group focus:outline-none focus:ring-2 focus:ring-[#D4AF37] rounded-lg p-1">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#F5E6D3] to-[#E3C9AF] flex items-center justify-center text-[#8C6D53] shadow-sm border border-[#D4AF37]/30 group-hover:scale-105 transition-transform duration-300">
+                <i data-lucide="sparkles" class="w-5 h-5 text-[#9E7B5D]"></i>
+              </div>
+              <div>
+                <span class="font-serif-display text-2xl font-bold tracking-tight text-[#2C2623] block leading-none">Pearl Beauty Hub</span>
+                <span class="text-[10px] tracking-widest uppercase font-medium text-[#8C7A6B] block mt-1">Beauty Parlour</span>
+              </div>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav id="desktop-nav" class="hidden md:flex items-center space-x-1 lg:space-x-2">
+              <button data-nav-link="hero" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">Home</button>
+              <button data-nav-link="about" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">About</button>
+              <button data-nav-link="services" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">Services</button>
+              <button data-nav-link="why-choose-us" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">Why Us</button>
+              <button data-nav-link="gallery" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">Gallery</button>
+              <button data-nav-link="booking" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">Book Appointment</button>
+              <button data-nav-link="location" class="nav-pill px-3 py-2 text-sm font-medium rounded-full transition-all duration-200 cursor-pointer">Location</button>
+            </nav>
+
+            <!-- Rating Badge & CTA -->
+            <div class="hidden lg:flex items-center gap-4">
+              <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F3EADF] border border-[#E3D4C2] text-xs font-semibold text-[#54463A]">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-[#D4AF37] text-[#D4AF37]"></i>
+                <span>4.7★</span>
+                <span class="text-[#8C7A6B] font-normal">(3 Reviews)</span>
+              </div>
+
+              <button data-nav-link="booking" class="inline-flex items-center gap-2 bg-[#2C2623] text-[#FAF7F2] hover:bg-[#423935] px-5 py-2.5 rounded-full text-sm font-medium shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+                <i data-lucide="calendar" class="w-4 h-4 text-[#E6CDB8]"></i>
+                <span>Book Appointment</span>
+              </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="flex items-center gap-2 md:hidden">
+              <button data-nav-link="booking" class="p-2 rounded-full bg-[#2C2623] text-[#FAF7F2] text-xs font-medium flex items-center gap-1">
+                <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                <span>Book</span>
+              </button>
+              <button id="mobile-menu-toggle" class="p-2 rounded-lg text-[#2C2623] hover:bg-[#EFE4D6] transition-colors focus:outline-none" aria-label="Toggle navigation menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FAF7F2] border-b border-[#E8DDCF] px-4 pt-2 pb-6 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+          <div class="flex items-center justify-between py-2 mb-3 px-2 bg-[#F3EADF] rounded-xl">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-[#2C2623]">
+              <i data-lucide="star" class="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]"></i>
+              <span>4.7 Google Rating</span>
+            </div>
+            <span class="text-xs text-[#8C7A6B]">(3 Reviews)</span>
+          </div>
+
+          <div id="mobile-nav" class="space-y-1">
+            <button data-nav-link="hero" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">Home</button>
+            <button data-nav-link="about" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">About</button>
+            <button data-nav-link="services" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">Services</button>
+            <button data-nav-link="why-choose-us" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">Why Us</button>
+            <button data-nav-link="gallery" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">Gallery</button>
+            <button data-nav-link="booking" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">Book Appointment</button>
+            <button data-nav-link="location" class="nav-pill-mobile w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors">Location</button>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-[#E8DDCF] flex flex-col gap-2">
+            <div class="flex items-start gap-2 px-2 text-xs text-[#62554B]">
+              <i data-lucide="map-pin" class="w-4 h-4 text-[#8C6D53] shrink-0 mt-0.5"></i>
+              <span>3/7 57th Street, Korattur Railway Station Road, Venkatraman Nagar, Korattur, Chennai, Tamil Nadu 600080</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+          <div class="absolute inset-0 z-0">
+            <img src="assets/images/pearl_hero_salon_1785844476951.jpg" alt="Pearl Beauty Hub Parlour Atmosphere" referrerpolicy="no-referrer" class="w-full h-full object-cover object-center transform scale-105 filter brightness-95" loading="eager" />
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1E1917]/85 via-[#2C2623]/70 to-[#1E1917]/50 md:to-[#1E1917]/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#2C2623] via-transparent to-black/30"></div>
+          </div>
+
+          <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left py-12">
+            <div class="max-w-2xl lg:max-w-3xl">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-xs sm:text-sm font-medium mb-6 animate-float">
+                <span class="flex items-center gap-1 text-[#FCD34D]">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <span class="font-bold text-white">4.7★</span>
+                </span>
+                <span class="text-white/40">|</span>
+                <span class="text-white/90">3 Google Reviews</span>
+                <span class="text-white/40">|</span>
+                <span class="text-amber-200/90 font-medium">Beauty Parlour</span>
+              </div>
+
+              <h1 class="font-serif-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.15] mb-6">
+                Let Your Inner Beauty Shine At <span class="italic font-normal text-[#E8D0B8]">Pearl Beauty Hub</span>
+              </h1>
+
+              <p class="text-base sm:text-lg lg:text-xl text-neutral-200 font-light leading-relaxed mb-8 max-w-xl">
+                Your go-to spot for glowing skin, perfect brows, and total self-care. Done by skilled professionals in a clean, relaxing space.
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10 text-xs sm:text-sm text-amber-100/90">
+                <div class="flex items-center gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg backdrop-blur-xs border border-white/10">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#D4AF37]"></i>
+                  <span>Certified Professionals</span>
+                </div>
+                <div class="flex items-center gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg backdrop-blur-xs border border-white/10">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#D4AF37]"></i>
+                  <span>Premium Products</span>
+                </div>
+                <div class="flex items-center gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg backdrop-blur-xs border border-white/10">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-[#D4AF37]"></i>
+                  <span>Hygienic Environment</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                <button data-nav-link="booking" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#E8D0B8] text-[#2C2623] hover:bg-[#F2DFCD] px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer">
+                  <i data-lucide="calendar" class="w-5 h-5 text-[#2C2623]"></i>
+                  <span>Book Appointment</span>
+                </button>
+
+                <button data-nav-link="services" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md px-8 py-4 rounded-full text-base font-medium transition-all duration-300 cursor-pointer">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-[#E8D0B8]"></i>
+                  <span>View Services</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-center">
+            <button data-nav-link="about" class="p-2 rounded-full text-white/70 hover:text-white transition-colors animate-bounce cursor-pointer focus:outline-none" aria-label="Scroll to About section">
+              <i data-lucide="chevron-down" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-28 bg-[#FAF7F2] relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-[#F3EADF]/60 rounded-full blur-3xl -z-0 pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+          <div class="absolute bottom-0 left-0 w-80 h-80 bg-[#EFE4D6]/40 rounded-full blur-3xl -z-0 pointer-events-none transform -translate-x-1/3 translate-y-1/3"></div>
+
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+              <!-- Left Column: Image Card -->
+              <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                  <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#E3D4C2] to-[#F5E6D3] opacity-60 transform -rotate-1 shadow-xs"></div>
+
+                  <div class="relative rounded-2xl overflow-hidden shadow-xl border border-[#E8DDCF]">
+                    <img src="assets/images/pearl_facial_skincare_1785844491183.jpg" alt="Aesthetic skincare treatment session at Pearl Beauty Hub" referrerpolicy="no-referrer" class="w-full h-[380px] sm:h-[460px] object-cover object-center transform hover:scale-102 transition-transform duration-700" loading="lazy" />
+
+                    <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass-panel shadow-lg flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#2C2623] text-[#E8D0B8] flex items-center justify-center shrink-0">
+                          <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <div>
+                          <div class="text-sm font-bold text-[#2C2623] flex items-center gap-1">
+                            <span>4.7★ Rating</span>
+                            <span class="text-xs font-normal text-[#62554B]">(3 Google Reviews)</span>
+                          </div>
+                          <p class="text-xs text-[#62554B]">Korattur, Chennai</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Narrative Content -->
+              <div class="lg:col-span-7">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE4D6] border border-[#E3D4C2] text-xs font-semibold tracking-wider text-[#8C6D53] uppercase mb-4">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>About Pearl Beauty Hub</span>
+                </div>
+
+                <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2623] leading-tight mb-6">
+                  Your Go-To Spot For Glowing Skin, Perfect Brows &amp; Total Self-Care
+                </h2>
+
+                <div class="prose prose-stone text-base sm:text-lg text-[#54463A] leading-relaxed mb-8 space-y-4">
+                  <p>Welcome to Pearl Beauty Hub, your go-to spot for glowing skin, perfect brows, and total self-care. We offer a wide range of beauty services including facials, waxing, bridal makeup, hair styling, and more — all done by skilled professionals in a clean, relaxing space. Whether it's a quick touch-up or a full makeover, we make sure you walk out looking and feeling confident. Book your appointment today and let your inner beauty shine through at Pearl Beauty Hub.</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-[#F3EADF] border border-[#E3D4C2] mb-8 flex items-start gap-3">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-[#8C6D53] shrink-0 mt-0.5"></i>
+                  <div>
+                    <span class="text-xs uppercase font-semibold text-[#8C6D53] tracking-wider block mb-0.5">Location</span>
+                    <p class="text-sm font-medium text-[#2C2623]">3/7 57th Street, Korattur Railway Station Road, Venkatraman Nagar, Korattur, Chennai, Tamil Nadu 600080</p>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                  <button data-nav-link="booking" class="bg-[#2C2623] text-[#FAF7F2] hover:bg-[#423935] px-7 py-3.5 rounded-full text-sm font-semibold shadow-md transition-all duration-300 cursor-pointer">
+                    Book Appointment Today
+                  </button>
+
+                  <div class="flex items-center gap-2 text-xs text-[#62554B] font-medium">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-[#8C6D53]"></i>
+                    <span>Clean, Relaxing Space</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 lg:py-28 bg-[#F5EFE8] relative">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE4D6] border border-[#E3D4C2] text-xs font-semibold tracking-wider text-[#8C6D53] uppercase mb-3">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Beauty &amp; Self-Care Menu</span>
+              </div>
+              <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2623] mb-4">Our Professional Services</h2>
+              <p class="text-base sm:text-lg text-[#62554B]">A wide range of beauty services done by skilled professionals in a clean, relaxing space.</p>
+            </div>
+
+            <!-- Filter Bar & Search -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+              <div id="category-tabs" class="flex flex-wrap items-center justify-center gap-2 w-full md:w-auto">
+                <button data-category="All" class="category-tab px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer">All</button>
+                <button data-category="Skin Care" class="category-tab px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer">Skin Care</button>
+                <button data-category="Hair" class="category-tab px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer">Hair</button>
+                <button data-category="Makeup" class="category-tab px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer">Makeup</button>
+                <button data-category="Nails & Body" class="category-tab px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer">Nails &amp; Body</button>
+                <button data-category="Spa" class="category-tab px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer">Spa</button>
+              </div>
+
+              <div class="relative w-full md:w-64">
+                <i data-lucide="search" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-1/2 transform -translate-y-1/2"></i>
+                <input id="service-search" type="text" placeholder="Search services..." class="w-full pl-10 pr-4 py-2 rounded-full bg-[#FAF7F2] border border-[#E8DDCF] text-sm text-[#2C2623] placeholder-[#8C7A6B] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all" />
+              </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+
+            <!-- Empty state -->
+            <div id="services-empty" class="hidden text-center py-12 bg-[#FAF7F2] rounded-2xl border border-[#E8DDCF]">
+              <p class="text-sm text-[#8C7A6B]">No services found matching "<span id="services-empty-query"></span>".</p>
+              <button id="clear-filters" class="mt-3 text-xs font-semibold text-[#8C6D53] underline cursor-pointer">Clear filters</button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-20 lg:py-28 bg-[#FAF7F2] relative overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE4D6] border border-[#E3D4C2] text-xs font-semibold tracking-wider text-[#8C6D53] uppercase mb-3">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Excellence &amp; Care</span>
+              </div>
+              <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2623] mb-4">Why Choose Pearl Beauty Hub</h2>
+              <p class="text-base sm:text-lg text-[#62554B]">We are dedicated to providing a premium parlour experience centered on safety, skill, and genuine care.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="bg-[#F5EFE8] rounded-2xl p-8 border border-[#E8DDCF] shadow-xs hover:shadow-md hover:border-[#D4AF37]/40 transition-all duration-300 relative group text-center md:text-left">
+                <div class="w-14 h-14 rounded-2xl bg-[#EFE4D6] flex items-center justify-center border border-[#E3D4C2] mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-300 shadow-2xs">
+                  <i data-lucide="award" class="w-7 h-7 text-[#8C6D53]"></i>
+                </div>
+                <h3 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-3">Certified Professionals</h3>
+                <p class="text-sm text-[#54463A] leading-relaxed">Our experienced beauty specialists are trained in modern techniques to ensure exceptional care and safety.</p>
+              </div>
+
+              <div class="bg-[#F5EFE8] rounded-2xl p-8 border border-[#E8DDCF] shadow-xs hover:shadow-md hover:border-[#D4AF37]/40 transition-all duration-300 relative group text-center md:text-left">
+                <div class="w-14 h-14 rounded-2xl bg-[#EFE4D6] flex items-center justify-center border border-[#E3D4C2] mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-300 shadow-2xs">
+                  <i data-lucide="sparkles" class="w-7 h-7 text-[#8C6D53]"></i>
+                </div>
+                <h3 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-3">Premium Products</h3>
+                <p class="text-sm text-[#54463A] leading-relaxed">We exclusively use dermatologically safe, high-grade beauty products for lasting brilliance.</p>
+              </div>
+
+              <div class="bg-[#F5EFE8] rounded-2xl p-8 border border-[#E8DDCF] shadow-xs hover:shadow-md hover:border-[#D4AF37]/40 transition-all duration-300 relative group text-center md:text-left">
+                <div class="w-14 h-14 rounded-2xl bg-[#EFE4D6] flex items-center justify-center border border-[#E3D4C2] mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform duration-300 shadow-2xs">
+                  <i data-lucide="shield-check" class="w-7 h-7 text-[#8C6D53]"></i>
+                </div>
+                <h3 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-3">Hygienic Environment</h3>
+                <p class="text-sm text-[#54463A] leading-relaxed">We adhere to rigorous sanitation protocols in a serene, meticulously clean, and relaxing parlour setting.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Happy Clients Counter -->
+        <section class="py-16 bg-[#2C2623] text-[#FAF7F2] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#423935] via-[#2C2623] to-[#1E1917] opacity-80"></div>
+
+          <div id="clients-counter-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 text-center shadow-2xl">
+
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-[#E8D0B8] mb-6">
+                <i data-lucide="heart" class="w-3.5 h-3.5 fill-[#E8D0B8]"></i>
+                <span>Trusted Beauty Destination</span>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 my-2">
+
+                <div class="text-center">
+                  <div class="font-serif-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#E8D0B8] flex items-center justify-center">
+                    <span id="clients-count">0</span>
+                    <span class="text-[#D4AF37] ml-1">+</span>
+                  </div>
+                  <p class="text-base sm:text-lg font-medium text-neutral-300 mt-2 uppercase tracking-widest text-xs">Happy Clients</p>
+                </div>
+
+                <div class="hidden sm:block w-px h-16 bg-white/15"></div>
+
+                <div class="text-center sm:text-left flex flex-col items-center sm:items-start">
+                  <div class="flex items-center gap-1.5 text-2xl font-bold text-white mb-1">
+                    <div class="flex text-[#FCD34D]">
+                      <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <span class="ml-2 font-serif-display text-3xl">4.7★</span>
+                  </div>
+                  <p class="text-xs text-neutral-400">Based on 3 Google Reviews in Korattur</p>
+                </div>
+
+              </div>
+
+              <p class="text-xs sm:text-sm text-neutral-400 font-light mt-8 max-w-lg mx-auto">
+                Providing high quality beauty care, facials, waxing, bridal makeup, and hair styling to our community.
+              </p>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 lg:py-28 bg-[#FAF7F2] relative">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE4D6] border border-[#E3D4C2] text-xs font-semibold tracking-wider text-[#8C6D53] uppercase mb-3">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Visual Showcase</span>
+              </div>
+              <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2623] mb-4">Our Parlour Gallery</h2>
+              <p class="text-base sm:text-lg text-[#62554B]">Explore our serene space, aesthetic skincare sessions, and bridal styling work.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              <div class="gallery-item group relative rounded-2xl overflow-hidden bg-[#F3EADF] border border-[#E8DDCF] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer aspect-4/3 sm:aspect-1/1 lg:aspect-4/3"
+                   data-src="assets/images/pearl_hero_salon_1785844476951.jpg"
+                   data-title="Pearl Beauty Hub Serene Interior"
+                   data-category="Parlour Ambience"
+                   data-alt="Luxurious Pearl Beauty Hub salon interior with warm ambient lighting">
+                <img src="assets/images/pearl_hero_salon_1785844476951.jpg" alt="Luxurious Pearl Beauty Hub salon interior with warm ambient lighting" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-center transform group-hover:scale-108 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#2C2623]/80 via-[#2C2623]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-between text-white">
+                  <div class="flex justify-end">
+                    <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      <i data-lucide="maximize-2" class="w-4 h-4 text-white"></i>
+                    </span>
+                  </div>
+                  <div class="transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                    <span class="text-[10px] tracking-widest uppercase font-semibold text-[#E8D0B8] block mb-1">Parlour Ambience</span>
+                    <h3 class="font-serif-display text-xl font-bold text-white">Pearl Beauty Hub Serene Interior</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-item group relative rounded-2xl overflow-hidden bg-[#F3EADF] border border-[#E8DDCF] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer aspect-4/3 sm:aspect-1/1 lg:aspect-4/3"
+                   data-src="assets/images/pearl_facial_skincare_1785844491183.jpg"
+                   data-title="Radiant Skincare & Facial Therapy"
+                   data-category="Skin Care"
+                   data-alt="Professional aesthetic facial treatment in progress at Pearl Beauty Hub">
+                <img src="assets/images/pearl_facial_skincare_1785844491183.jpg" alt="Professional aesthetic facial treatment in progress at Pearl Beauty Hub" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-center transform group-hover:scale-108 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#2C2623]/80 via-[#2C2623]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-between text-white">
+                  <div class="flex justify-end">
+                    <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      <i data-lucide="maximize-2" class="w-4 h-4 text-white"></i>
+                    </span>
+                  </div>
+                  <div class="transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                    <span class="text-[10px] tracking-widest uppercase font-semibold text-[#E8D0B8] block mb-1">Skin Care</span>
+                    <h3 class="font-serif-display text-xl font-bold text-white">Radiant Skincare &amp; Facial Therapy</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gallery-item group relative rounded-2xl overflow-hidden bg-[#F3EADF] border border-[#E8DDCF] shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer aspect-4/3 sm:aspect-1/1 lg:aspect-4/3"
+                   data-src="assets/images/pearl_bridal_makeup_1785844503820.jpg"
+                   data-title="Bridal Make-up & Hair Elegance"
+                   data-category="Bridal Make-up"
+                   data-alt="Intricate bridal makeup and hair styling service session">
+                <img src="assets/images/pearl_bridal_makeup_1785844503820.jpg" alt="Intricate bridal makeup and hair styling service session" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover object-center transform group-hover:scale-108 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#2C2623]/80 via-[#2C2623]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-between text-white">
+                  <div class="flex justify-end">
+                    <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      <i data-lucide="maximize-2" class="w-4 h-4 text-white"></i>
+                    </span>
+                  </div>
+                  <div class="transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                    <span class="text-[10px] tracking-widest uppercase font-semibold text-[#E8D0B8] block mb-1">Bridal Make-up</span>
+                    <h3 class="font-serif-display text-xl font-bold text-white">Bridal Make-up &amp; Hair Elegance</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Lightbox Modal -->
+          <div id="gallery-lightbox" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
+            <div class="relative max-w-4xl w-full bg-[#1E1917] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" id="gallery-lightbox-panel">
+              <button id="gallery-lightbox-close" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="Close image preview">
+                <i data-lucide="x" class="w-5 h-5"></i>
+              </button>
+
+              <div class="relative max-h-[80vh] flex items-center justify-center bg-black">
+                <img id="gallery-lightbox-img" src="" alt="" referrerpolicy="no-referrer" class="max-h-[75vh] w-auto max-w-full object-contain" />
+              </div>
+
+              <div class="p-6 bg-[#2C2623] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-white/10">
+                <div>
+                  <span id="gallery-lightbox-category" class="text-xs uppercase tracking-widest text-[#E8D0B8] block"></span>
+                  <h4 id="gallery-lightbox-title" class="font-serif-display text-xl font-bold mt-0.5"></h4>
+                </div>
+                <span class="text-xs text-neutral-400">Pearl Beauty Hub • Korattur</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Online Booking Section -->
+        <section id="booking" class="py-20 lg:py-28 bg-[#F5EFE8] relative">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+              <!-- Left Side: Booking Information & Perks -->
+              <div class="lg:col-span-5">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE4D6] border border-[#E3D4C2] text-xs font-semibold tracking-wider text-[#8C6D53] uppercase mb-4">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>Easy Online Reservation</span>
+                </div>
+
+                <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2623] mb-6 leading-tight">Book Your Appointment At Pearl Beauty Hub</h2>
+
+                <p class="text-base text-[#62554B] leading-relaxed mb-8">Select your preferred beauty service, pick a date and time slot, and our team will get your session ready in our clean, relaxing space.</p>
+
+                <div class="space-y-4 mb-8">
+                  <div class="p-4 rounded-xl bg-[#FAF7F2] border border-[#E8DDCF] flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-full bg-[#F3EADF] text-[#8C6D53] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check-circle" class="w-5 h-5 text-[#8C6D53]"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-bold text-[#2C2623]">Skilled Beauty Professionals</h4>
+                      <p class="text-xs text-[#62554B] mt-0.5">All services delivered by experienced specialists with care.</p>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-xl bg-[#FAF7F2] border border-[#E8DDCF] flex items-start gap-3.5">
+                    <div class="w-9 h-9 rounded-full bg-[#F3EADF] text-[#8C6D53] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="shield-check" class="w-5 h-5 text-[#8C6D53]"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-bold text-[#2C2623]">Hygienic &amp; Relaxing Ambience</h4>
+                      <p class="text-xs text-[#62554B] mt-0.5">Strict sanitation protocols for your peace of mind.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#2C2623] text-[#FAF7F2]">
+                  <h4 class="font-serif-display text-lg font-bold text-[#E8D0B8] mb-1">Need Assistance?</h4>
+                  <p class="text-xs text-neutral-300">Visit us at 3/7 57th Street, Korattur Railway Station Road, Venkatraman Nagar, Korattur, Chennai, Tamil Nadu 600080. We look forward to welcoming you!</p>
+                </div>
+              </div>
+
+              <!-- Right Side: Interactive Booking Form -->
+              <div class="lg:col-span-7">
+                <div class="bg-[#FAF7F2] rounded-3xl p-6 sm:p-10 border border-[#E8DDCF] shadow-lg relative">
+
+                  <h3 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-6 border-b border-[#E8DDCF] pb-4">Schedule Service Session</h3>
+
+                  <form id="booking-form" class="space-y-6" novalidate>
+
+                    <!-- Full Name -->
+                    <div>
+                      <label class="block text-xs font-semibold uppercase tracking-wider text-[#54463A] mb-2">Full Name <span class="text-rose-600">*</span></label>
+                      <div class="relative">
+                        <i data-lucide="user" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-1/2 transform -translate-y-1/2"></i>
+                        <input id="field-name" type="text" placeholder="e.g. Priyadarshini Sundaram" class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5EFE8] border border-[#E8DDCF] text-sm text-[#2C2623] placeholder-[#A08F81] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all" />
+                      </div>
+                      <p id="error-name" class="hidden text-xs text-rose-600 mt-1.5"></p>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div>
+                      <label class="block text-xs font-semibold uppercase tracking-wider text-[#54463A] mb-2">Phone Number <span class="text-rose-600">*</span></label>
+                      <div class="relative">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-1/2 transform -translate-y-1/2"></i>
+                        <input id="field-phone" type="tel" placeholder="e.g. 9876543210" class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5EFE8] border border-[#E8DDCF] text-sm text-[#2C2623] placeholder-[#A08F81] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all" />
+                      </div>
+                      <p id="error-phone" class="hidden text-xs text-rose-600 mt-1.5"></p>
+                    </div>
+
+                    <!-- Service Select Dropdown -->
+                    <div>
+                      <label class="block text-xs font-semibold uppercase tracking-wider text-[#54463A] mb-2">Select Service <span class="text-rose-600">*</span></label>
+                      <div class="relative">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
+                        <select id="field-service" class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5EFE8] border border-[#E8DDCF] text-sm text-[#2C2623] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all appearance-none cursor-pointer">
+                          <option value="" disabled selected>Choose from our 16 services...</option>
+                        </select>
+                      </div>
+                      <p id="error-service" class="hidden text-xs text-rose-600 mt-1.5"></p>
+                    </div>
+
+                    <!-- Date & Time Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-[#54463A] mb-2">Preferred Date <span class="text-rose-600">*</span></label>
+                        <div class="relative">
+                          <i data-lucide="calendar" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
+                          <input id="field-date" type="date" class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5EFE8] border border-[#E8DDCF] text-sm text-[#2C2623] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all cursor-pointer" />
+                        </div>
+                        <p id="error-date" class="hidden text-xs text-rose-600 mt-1.5"></p>
+                      </div>
+
+                      <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-[#54463A] mb-2">Preferred Time <span class="text-rose-600">*</span></label>
+                        <div class="relative">
+                          <i data-lucide="clock" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
+                          <select id="field-time" class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5EFE8] border border-[#E8DDCF] text-sm text-[#2C2623] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all appearance-none cursor-pointer"></select>
+                        </div>
+                        <p id="error-time" class="hidden text-xs text-rose-600 mt-1.5"></p>
+                      </div>
+                    </div>
+
+                    <!-- Optional Message -->
+                    <div>
+                      <label class="block text-xs font-semibold uppercase tracking-wider text-[#54463A] mb-2">Optional Message / Special Requests</label>
+                      <div class="relative">
+                        <i data-lucide="message-square" class="w-4 h-4 text-[#8C7A6B] absolute left-3.5 top-3.5"></i>
+                        <textarea id="field-message" rows="3" placeholder="Any specific preferences or notes for your visit..." class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5EFE8] border border-[#E8DDCF] text-sm text-[#2C2623] placeholder-[#A08F81] focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition-all"></textarea>
+                      </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="booking-submit" class="w-full py-4 rounded-xl bg-[#2C2623] hover:bg-[#423935] text-[#FAF7F2] font-semibold text-base shadow-md transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75">
+                      <span id="booking-submit-label" class="flex items-center gap-2">
+                        <span>Confirm Booking Request</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                      </span>
+                      <div id="booking-submit-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    </button>
+
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Confirmation Modal -->
+          <div id="booking-confirmation" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-xs items-center justify-center p-4 animate-in fade-in duration-200">
+            <div class="bg-[#FAF7F2] max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-[#E8DDCF] shadow-2xl relative text-center">
+
+              <button id="booking-confirmation-close" class="absolute top-4 right-4 p-2 text-[#8C7A6B] hover:text-[#2C2623] rounded-full hover:bg-[#F3EADF] transition-colors" aria-label="Close confirmation modal">
+                <i data-lucide="x" class="w-5 h-5"></i>
+              </button>
+
+              <div class="w-16 h-16 rounded-full bg-[#EFE4D6] text-[#8C6D53] flex items-center justify-center mx-auto mb-4 border border-[#E3D4C2]">
+                <i data-lucide="check-circle" class="w-8 h-8 text-[#8C6D53]"></i>
+              </div>
+
+              <h3 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-2">Booking Submitted!</h3>
+
+              <p class="text-xs text-[#62554B] mb-6">Thank you for choosing Pearl Beauty Hub. Here is your appointment summary:</p>
+
+              <div class="bg-[#F5EFE8] rounded-2xl p-4 border border-[#E8DDCF] text-left text-xs space-y-2.5 mb-6">
+                <div class="flex justify-between border-b border-[#E8DDCF] pb-2">
+                  <span class="text-[#8C7A6B]">Reference No:</span>
+                  <span id="confirm-id" class="font-bold text-[#2C2623]"></span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#8C7A6B]">Client Name:</span>
+                  <span id="confirm-name" class="font-semibold text-[#2C2623]"></span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#8C7A6B]">Phone:</span>
+                  <span id="confirm-phone" class="font-semibold text-[#2C2623]"></span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#8C7A6B]">Service:</span>
+                  <span id="confirm-service" class="font-semibold text-[#8C6D53]"></span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-[#8C7A6B]">Date &amp; Time:</span>
+                  <span id="confirm-datetime" class="font-semibold text-[#2C2623]"></span>
+                </div>
+              </div>
+
+              <button id="booking-confirmation-done" class="w-full py-3 rounded-xl bg-[#2C2623] hover:bg-[#423935] text-[#FAF7F2] text-sm font-semibold transition-colors cursor-pointer">Done</button>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="py-20 lg:py-28 bg-[#FAF7F2] relative">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-12">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE4D6] border border-[#E3D4C2] text-xs font-semibold tracking-wider text-[#8C6D53] uppercase mb-3">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Visit Our Parlour</span>
+              </div>
+              <h2 class="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C2623] mb-4">Locate Pearl Beauty Hub</h2>
+              <p class="text-base sm:text-lg text-[#62554B]">Conveniently situated on Korattur Railway Station Road in Venkatraman Nagar, Chennai.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+              <!-- Address Details Card -->
+              <div class="lg:col-span-5 bg-[#F5EFE8] rounded-3xl p-8 border border-[#E8DDCF] shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="w-12 h-12 rounded-2xl bg-[#EFE4D6] flex items-center justify-center border border-[#E3D4C2] mb-6">
+                    <i data-lucide="map-pin" class="w-6 h-6 text-[#8C6D53]"></i>
+                  </div>
+
+                  <h3 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-3">Pearl Beauty Hub</h3>
+
+                  <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E8DDCF] mb-6">
+                    <span class="text-[10px] font-semibold tracking-wider uppercase text-[#8C6D53] block mb-1">Full Address</span>
+                    <p class="text-sm text-[#2C2623] leading-relaxed font-medium">3/7 57th Street, Korattur Railway Station Road, Venkatraman Nagar, Korattur, Chennai, Tamil Nadu 600080</p>
+                  </div>
+
+                  <div class="flex items-center gap-3 p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E8DDCF] mb-6">
+                    <i data-lucide="star" class="w-5 h-5 fill-[#D4AF37] text-[#D4AF37]"></i>
+                    <div>
+                      <div class="text-sm font-bold text-[#2C2623]">4.7★ Google Rating</div>
+                      <div class="text-xs text-[#62554B]">Based on 3 authentic Google reviews</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-4 border-t border-[#E8DDCF]">
+                  <a href="https://www.google.com/maps/search/?api=1&query=3%2F7%2057th%20Street%2C%20Korattur%20Railway%20Station%20Road%2C%20Venkatraman%20Nagar%2C%20Korattur%2C%20Chennai%2C%20Tamil%20Nadu%20600080" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#2C2623] hover:bg-[#423935] text-[#FAF7F2] text-xs font-semibold transition-all duration-300">
+                    <i data-lucide="navigation" class="w-4 h-4"></i>
+                    <span>Open Directions in Google Maps</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Google Maps Embed Placeholder Container -->
+              <div class="lg:col-span-7 bg-[#EFE4D6] rounded-3xl overflow-hidden border border-[#E8DDCF] relative min-h-[350px] sm:min-h-[420px] flex flex-col items-center justify-center p-8 text-center shadow-inner">
+
+                <!--
+                  ===================================================================
+                  <!-- INSERT REAL GOOGLE MAPS EMBED IFRAME HERE WHEN COORD/KEY AVAILABLE -->
+                  Example:
+                  <iframe
+                    title="Pearl Beauty Hub Map Location"
+                    src="https://www.google.com/maps/embed?pb=..."
+                    width="100%"
+                    height="100%"
+                    style="border:0"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  ===================================================================
+                -->
+
+                <div class="w-16 h-16 rounded-full bg-[#FAF7F2] text-[#8C6D53] flex items-center justify-center mb-4 shadow-sm border border-[#E3D4C2]">
+                  <i data-lucide="map-pin" class="w-8 h-8 text-[#8C6D53]"></i>
+                </div>
+
+                <h4 class="font-serif-display text-2xl font-bold text-[#2C2623] mb-2">Google Maps Location Container</h4>
+
+                <p class="text-xs sm:text-sm text-[#62554B] max-w-md mb-6 leading-relaxed">3/7 57th Street, Korattur Railway Station Road, Venkatraman Nagar, Korattur, Chennai, Tamil Nadu 600080</p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=3%2F7%2057th%20Street%2C%20Korattur%20Railway%20Station%20Road%2C%20Venkatraman%20Nagar%2C%20Korattur%2C%20Chennai%2C%20Tamil%20Nadu%20600080" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#2C2623] text-xs font-semibold border border-[#E8DDCF] shadow-xs transition-colors">
+                  <i data-lucide="navigation" class="w-3.5 h-3.5 text-[#8C6D53]"></i>
+                  <span>View Map Externally</span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-[#1E1917] text-[#FAF7F2] border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+
+            <!-- Brand Column -->
+            <div class="md:col-span-6 lg:col-span-5">
+              <div class="flex items-center gap-2.5 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#F5E6D3] to-[#E3C9AF] flex items-center justify-center text-[#2C2623]">
+                  <i data-lucide="sparkles" class="w-5 h-5 text-[#8C6D53]"></i>
+                </div>
+                <div>
+                  <span class="font-serif-display text-2xl font-bold tracking-tight text-white block leading-none">Pearl Beauty Hub</span>
+                  <span class="text-[10px] tracking-widest uppercase font-medium text-[#E8D0B8] block mt-1">Beauty Parlour</span>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6 max-w-md font-light">Your go-to spot for glowing skin, perfect brows, and total self-care. Done by skilled professionals in a clean, relaxing space in Korattur, Chennai.</p>
+
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs text-amber-200">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-[#FCD34D] text-[#FCD34D]"></i>
+                <span>4.7★ Google Rating</span>
+                <span class="text-white/40">•</span>
+                <span class="text-neutral-300">3 Reviews</span>
+              </div>
+            </div>
+
+            <!-- Quick Navigation Column -->
+            <div class="md:col-span-3 lg:col-span-3">
+              <h4 class="font-serif-display text-lg font-bold text-[#E8D0B8] mb-4">Quick Navigation</h4>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-300">
+                <li><button data-nav-link="hero" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">Home</button></li>
+                <li><button data-nav-link="about" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">About Us</button></li>
+                <li><button data-nav-link="services" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">Services Menu</button></li>
+                <li><button data-nav-link="why-choose-us" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">Why Choose Us</button></li>
+                <li><button data-nav-link="gallery" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">Parlour Gallery</button></li>
+                <li><button data-nav-link="booking" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">Book Appointment</button></li>
+                <li><button data-nav-link="location" class="hover:text-[#E8D0B8] transition-colors cursor-pointer text-left">Location</button></li>
+              </ul>
+            </div>
+
+            <!-- Location Address Column -->
+            <div class="md:col-span-3 lg:col-span-4">
+              <h4 class="font-serif-display text-lg font-bold text-[#E8D0B8] mb-4">Parlour Address</h4>
+              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                <i data-lucide="map-pin" class="w-4 h-4 text-[#E8D0B8] shrink-0 mt-1"></i>
+                <span>3/7 57th Street, Korattur Railway Station Road, Venkatraman Nagar, Korattur, Chennai, Tamil Nadu 600080</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Copyright -->
+          <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+            <p>© <span id="footer-year"></span> Pearl Beauty Hub. All rights reserved.</p>
+            <div class="flex items-center gap-1 text-neutral-400">
+              <span>Crafted with</span>
+              <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-400 fill-current"></i>
+              <span>for Pearl Beauty Hub</span>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+      <!-- Back to Top Floating Button -->
+      <button id="back-to-top" class="hidden fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#2C2623] text-[#E8D0B8] shadow-lg hover:bg-[#423935] hover:scale-110 active:scale-95 transition-all duration-300 border border-[#E8D0B8]/30 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D4AF37]" aria-label="Back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+      </button>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

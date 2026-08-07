@@ -1,0 +1,106 @@
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF7F2;
+  color: #2C2623;
+}
+
+h1, h2, h3, h4, .font-serif-display {
+  font-family: var(--font-serif);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFEA;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4C3B3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFA894;
+}
+
+/* Glassmorphism & Accent Utilities */
+.glass-panel {
+  background: rgba(255, 253, 250, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(228, 214, 201, 0.5);
+}
+
+.champagne-gradient {
+  background: linear-gradient(135deg, #F9F3EC 0%, #EFE3D5 100%);
+}
+
+.gold-border-glow {
+  box-shadow: 0 4px 20px -2px rgba(212, 175, 55, 0.12);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Simple fade/slide-in helpers used in place of the tailwindcss-animate plugin */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slide-in-from-top {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-in.fade-in {
+  animation: fade-in 200ms ease-out;
+}
+.animate-in.slide-in-from-top-2 {
+  animation: slide-in-from-top 200ms ease-out;
+}
+
+/* Lucide icons default sizing (overridden by explicit w-/h- utility classes) */
+[data-lucide] {
+  display: inline-block;
+  vertical-align: middle;
+}
