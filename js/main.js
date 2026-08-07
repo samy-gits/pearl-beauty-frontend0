@@ -1,4 +1,4 @@
-const SUPABASE_URL = "https://eztzkivwjkcyxwcopxns.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://eztzkivwjkcyxwcopxns.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_CVHtnwHwG2TF4AXBam0_Sw_Jt2NhU_r";
 
 const supabase = window.supabase.createClient(
@@ -503,42 +503,32 @@ function initBookingForm() {
     submitSpinner.classList.remove('hidden');
 
     try {
-        const response = await fetch("https://pearl-beauty-dep-production.up.railway.app/appointments", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                customerName: nameField.value,
-                phone: phoneField.value,
-                email: "",
-                selectedService: serviceField.value,
-                appointmentDate: dateField.value,
-                appointmentTime: timeField.value,
-                message: messageField.value
-            })
-        });
+        const { data, error } = await supabase
+  .from("appointments")
+  .insert([
+    {
+      name: nameField.value,
+      phone: phoneField.value,
+      service: serviceField.value,
+      date: dateField.value,
+      time: timeField.value,
+    },
+  ])
+  .select()
+  .single();
 
-        const result = await response.json();
+if (error) throw error;
 
-        if (!response.ok || !result.success) {
-            throw new Error(result.message || "Booking failed");
-        }
+document.getElementById("confirm-id").textContent = data.id;
+document.getElementById("confirm-name").textContent = nameField.value;
+document.getElementById("confirm-phone").textContent = phoneField.value;
+document.getElementById("confirm-service").textContent = serviceField.value;
+document.getElementById("confirm-datetime").textContent =
+`${dateField.value} at ${timeField.value}`;
 
-        document.getElementById("confirm-id").textContent =
-            result.data.appointment.id;
-        document.getElementById("confirm-name").textContent =
-            nameField.value;
-        document.getElementById("confirm-phone").textContent =
-            phoneField.value;
-        document.getElementById("confirm-service").textContent =
-            serviceField.value;
-        document.getElementById("confirm-datetime").textContent =
-            `${dateField.value} at ${timeField.value}`;
-
-        const modal = document.getElementById("booking-confirmation");
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
+const modal = document.getElementById("booking-confirmation");
+modal.classList.remove("hidden");
+modal.classList.add("flex");
 
     } catch (error) {
         alert(error.message);
