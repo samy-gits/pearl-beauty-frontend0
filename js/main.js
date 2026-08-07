@@ -10,7 +10,7 @@
 const CONFIG = {
     SUPABASE: {
         URL: "https://eztzkivwjkcyxwcopxns.supabase.co",
-        ANON_KEY: "YOUR_PUBLISHABLE_KEY"
+        ANON_KEY: "sb_publishable_CVHtnwHwG2TF4AXBam0_Sw_Jt2NhU_r"
     },
 
     BUSINESS: {
