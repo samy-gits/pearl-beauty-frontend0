@@ -1,6 +1,15 @@
+const SUPABASE_URL = "https://eztzkivwjkcyxwcopxns.supabase.co/rest/v1/";
+const SUPABASE_ANON_KEY = "sb_publishable_CVHtnwHwG2TF4AXBam0_Sw_Jt2NhU_r";
+
+const supabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
 // ---------------------------------------------------------------------------
 // Data (mirrors src/data/beautyHubData.ts)
 // ---------------------------------------------------------------------------
+
 const BUSINESS_INFO = {
   name: 'Pearl Beauty Hub',
   category: 'Beauty Parlour',
